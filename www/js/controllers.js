@@ -1,7 +1,7 @@
 angular.module('basdat.controllers', [])
 
 .controller('AppCtrl', function($scope) {
-  // $scope.isWebView = ! (document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1);
+  $scope.isWebView = ! (document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1);
 })
 
 .controller('LoginCtrl', function($scope, $state, $firebaseAuth, $cordovaOauth, Auth, AuthHelper, FBURL) {
@@ -27,6 +27,7 @@ angular.module('basdat.controllers', [])
   }
 
   $scope.facebook = function() {
+    console.log('login facebook');
     $cordovaOauth.facebook("1384085425231929", ["email"]).then(function(result) {
       auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
         console.log(JSON.stringify(authData));
