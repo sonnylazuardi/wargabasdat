@@ -1,0 +1,48 @@
+<!-- The title of the ion-view will be shown on the navbar -->
+<ion-view view-title="Home" hide-nav-bar="true" cache-view="false">
+  <ion-content scroll="false" has-header="false" class="slider-page">
+    <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="active">
+      <ion-slide>
+        <div id="logo">
+          <img src="img/logo.png">
+        </div>
+        <p>
+          Facebook here
+        </p>
+      </ion-slide>
+      <ion-slide>
+        <p>
+          We've worked super hard to make you happy.
+        </p>
+        <p>
+          But if you are angry, too bad.
+        </p>
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" placeholder="Name" ng-model="$root.profile.name">
+          </label>
+          <label class="item item-input">
+            <input type="email" placeholder="Email" ng-model="$root.profile.email">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Date of Birth</span>
+            <input type="date" placeholder="Date of Birth" class="input-small input-right" ng-model="$root.profile.birthdate">
+          </label>
+          <label class="item item-input item-select">
+            <span class="input-label">
+              Gender
+            </span>
+            <select placeholder="Gender" ng-model="$root.profile.gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </label>
+        </div>
+        <div class="padding">
+          <button class="button button-block button-navy" ui-sref="tab.dashboard">Take me in</button>
+          <button class="button button-block button-stable" ui-sref="tab.dashboard">Skip</button>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

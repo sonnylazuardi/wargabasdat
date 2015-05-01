@@ -1,0 +1,47 @@
+<ion-view view-title="Profile">
+  <ion-content>
+    <div class="picture">
+      <div class="image-profile" style="background: url('{{profile.picture}}') no-repeat; background-size: cover; height: 300px; width: 100%"></div>
+      <div class="bio">
+        <div class="name">
+          {{profile.name}}
+        </div>
+      </div>
+    </div>
+    <div class="list bg-white">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nama Lengkap</span>
+        <input type="text" placeholder="Nama Lengkap*" ng-model="profile.full_name">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">NIM</span>
+        <input type="text" placeholder="NIM*" ng-model="profile.nim">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Email</span>
+        <input type="email" placeholder="Email*" ng-model="profile.email">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">No HP</span>
+        <input type="text" placeholder="No HP*" ng-model="profile.phone">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Alamat</span>
+        <textarea placeholder="Alamat*" rows="3" ng-model="profile.address"></textarea>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Tempat Lahir</span>
+        <input type="text" placeholder="Tempat Lahir*" ng-model="profile.birth_place">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Tanggal Lahir</span>
+        <input type="date" placeholder="Tanggal Lahir*" ng-model="profile.birth_date" ng-change="changeBirth()">
+      </label>
+    </div>
+
+    <button class="button button-custom button-block button-modern" ng-click="next()">
+      Lanjut isi Biodata
+    </button>
+
+  </ion-content>
+</ion-view>

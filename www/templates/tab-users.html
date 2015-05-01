@@ -1,0 +1,11 @@
+<ion-view view-title="Pendaftar">
+  <ion-content>
+    <ion-list>
+      <a class="item item-avatar" collection-repeat="user in users">
+        <img ng-src="{{user.picture}}">
+        <h2>{{user.full_name}}</h2>
+        <p>{{user.nim}}</p>
+      </a>
+    </ion-list>
+  </ion-content>
+</ion-view>

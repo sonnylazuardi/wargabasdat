@@ -1,0 +1,72 @@
+<ion-view view-title="Biodata">
+  <ion-content>
+    <div class="list bg-white">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Ceritakan diri kamu</span>
+        <textarea placeholder="Ceritakan diri kamu*" rows="3" ng-model="profile.about_self"></textarea>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Kelebihan min 3</span>
+        <textarea placeholder="Kelebihan min 3*" rows="3" ng-model="profile.strength"></textarea>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Kekurangan min 3</span>
+        <textarea placeholder="Kekurangan min 3*" rows="3" ng-model="profile.weakness"></textarea>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Motivasi</span>
+        <textarea placeholder="Motivasi*" rows="3" ng-model="profile.motivation"></textarea>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Harapan setelah masuk Basdat</span>
+        <textarea placeholder="Harapan setelah masuk Basdat*" rows="3" ng-model="profile.hope"></textarea>
+      </label>
+      
+      <div class="item item-icon-left assertive" href="#">
+        <i class="icon ion-ios-lightbulb"></i>
+        Sebelum mendaftar jawab pertanyaan berikut dulu ya
+      </div>
+      
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Siapa nama korlab Basdat?</span>
+        <input type="text" placeholder="Siapa nama korlab Basdat?" ng-model="profile.korlab">
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Apa kepanjangan Barokah?</span>
+        <input type="text" placeholder="Apa kepanjangan Barokah?" ng-model="profile.barokah">
+      </label>
+    
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Barokah menjual yang mana?</span>
+        <div class="row">
+          <div class="col">
+            <label class="item item-radio">
+              <input type="radio" name="group" ng-model="profile.selling" value="Coca Cola">
+              <div class="item-content">
+                <img src="img/coca.jpg" alt="">
+              </div>
+              <i class="radio-icon ion-checkmark"></i>
+            </label>
+          </div>
+          <div class="col">
+            <label class="item item-radio">
+              <input type="radio" name="group" ng-model="profile.selling" value="Tarik Mang">
+              <div class="item-content">
+                <img src="img/tarik.jpg" alt="">
+              </div>
+              <i class="radio-icon ion-checkmark"></i>
+            </label>
+          </div>
+        </div>
+      </label>
+    </div>
+    <button class="button button-custom button-block button-modern" ng-click="next()">
+      <i class="ion ion-ios-checkmark"></i> Daftarkan saya
+    </button>
+  </ion-content>
+</ion-view>
