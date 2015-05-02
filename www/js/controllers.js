@@ -4,7 +4,7 @@ angular.module('basdat.controllers', [])
   $scope.isWebView = ! (document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1);
 })
 
-.controller('LoginCtrl', function($scope, $state, $firebaseAuth, $cordovaOauth, Auth, AuthHelper, FBURL) {
+.controller('LoginCtrl', function($scope, $state, $firebaseAuth, Auth, AuthHelper, FBURL) {
 
   $scope.auth = Auth;
   $scope.auth.$onAuth(function(authData) {
@@ -23,21 +23,14 @@ angular.module('basdat.controllers', [])
         name: AuthHelper.getName(authData),
         picture: AuthHelper.getPicture(authData)
       });
+      $state.go('tab.profile');  
     }
   }
 
   $scope.facebook = function() {
     console.log('login facebook');
-    $cordovaOauth.facebook("1384085425231929", ["email"]).then(function(result) {
-      auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
-        console.log(JSON.stringify(authData));
-      }, function(error) {
-        console.error("ERROR: " + error);
-      });
-    }, function(error) {
-      Auth.$authWithOAuthPopup("facebook").then($scope.succeed).catch(function(error) {
-        console.log("Authentication failed:", error);
-      });
+    Auth.$authWithOAuthPopup("facebook").then($scope.succeed).catch(function(error) {
+      console.log("Authentication failed:", error);
     });
   }
 })
@@ -159,8 +152,12 @@ angular.module('basdat.controllers', [])
   }
 })
 
-.controller('NewsCtrl', function($scope, AuthService) {
+.controller('NewsCtrl', function($scope, News, AuthService) {
   AuthService.loadAuth($scope, 'stateBiodata', 'tab.biodata');
+  $scope.news = News;
+  $scope.news.$loaded(function() {
+    // alert('loaded');
+  });
 })
 
 .controller('UsersCtrl', function($scope, Users, AuthService) {

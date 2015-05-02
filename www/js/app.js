@@ -9,7 +9,6 @@ angular.module('basdat', [
   'ionic',
   'firebase',
   'ngCordova',
-  'ngCordovaOauth',
   'basdat.controllers',
   'basdat.services',
   'basdat.directives',
