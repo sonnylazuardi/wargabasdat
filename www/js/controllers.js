@@ -19,6 +19,7 @@ angular.module('basdat.controllers', [])
     if (authData) {
       var ref = new Firebase(FBURL);
       ref.child("users").child(authData.uid).update({
+        fbid: authData.facebook.id,
         provider: authData.provider,
         name: AuthHelper.getName(authData),
         picture: AuthHelper.getPicture(authData)

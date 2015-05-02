@@ -1,7 +1,8 @@
 <ion-view view-title="Profile">
   <ion-content>
+    
     <div class="picture">
-      <div class="image-profile" style="background: url('{{profile.picture}}') no-repeat; background-size: cover; height: 300px; width: 100%"></div>
+      <div class="image-profile" style="background: url('http://graph.facebook.com/{{profile.fbid}}/picture?type=square&width=400&height=400') no-repeat; background-size: cover; height: 300px; width: 100%"></div>
       <div class="bio">
         <div class="name">
           {{profile.name}}
